@@ -17,7 +17,7 @@ def binaryInput(prompt:str):
 # this function gets the user to select a response from 
 def listInput(prompt:str, list:list):
     # create a dictionary with numbers corresponding to answers
-    responseDict = zip(range(len(list)+1), list)
+    responseDict = dict(zip(range(1, len(list)+1), list))
 
     # print possible responses with numbers once
     print(prompt, ", Your options are:")
