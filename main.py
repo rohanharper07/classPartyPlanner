@@ -1,17 +1,21 @@
 # import my input and file module module from modules folder
-from modules import fileReadWrite, input, fileFinder
+from modules import easyInput, fileReadWrite, fileFinder, survey
 
 # options for the user upon starting the program
 operations = ["New Planner", "Load Backup", "Save Backup", "Quit"]
 
+snacks = fileReadWrite.readFile("party_foods.txt", False)
+
 plannerData = []
 
 while True:
-    command = input.listInput("What would you like to do?", operations)
+    command = easyInput.listInput("What would you like to do", operations)
 
     # if we want to make a new class party planner
     if command == "New Planner":
         print("Making a new class party planner!")
+
+        plannerData = survey.classSurvey(snacks)
 
     # make and save a new list of suggestions
     elif command == "Suggest Snacks!":
@@ -24,7 +28,7 @@ while True:
     elif command == "Save Backup":
         print("Saving a new backup")
 
-        fileName = input("Enter a file name: ")
+        fileName = easyInput("Enter a file name: ")
 
         fileReadWrite.writeFile(plannerData, fileName)
 
@@ -36,7 +40,7 @@ while True:
         if len(backups) == 0:
             print(f"Oops! No .ppbackup files found in the {__file__.strip('main.py')} directory")
         else:
-            input.listInput("Which backup would you like to load?", backups)
+            easyInput.listInput("Which backup would you like to load?", backups)
             print("Loading party planner backup")
 
     # quit the program
