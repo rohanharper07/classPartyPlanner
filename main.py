@@ -23,14 +23,15 @@ while True:
             print("You need to make a new planner or load a backup first!")
         else:
             print("Analysing data...")
+            results = analysis.analyse(plannerData)
 
     # save or overwrite a backup
     elif command == "Save Backup":
         print("Saving a new backup")
 
-        fileName = easyInput("Enter a file name: ")
+        fileName = input("Enter a file name: ")
 
-        fileReadWrite.writeFile(plannerData, fileName)
+        fileReadWrite.writeFile(plannerData, fileName + ".ppbackup")
 
     # load an existing backup
     elif command == "Load Backup":
