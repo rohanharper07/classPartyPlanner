@@ -2,33 +2,34 @@
 from . import easyInput
 
 def classSurvey(snacks):
-    preferences = ["best", "good", "ok", "bad", "no way"]
+    preferences = ["the best", "a good", "an ok", "a bad", "the worst"]
     surveyResults = []
+
+    # formats the string to be easily readable with it's indexes.
+    # starting the formatting with a string that already contains a value means we can avoid a leading comma or unnecessary if statement inside the loop
+    formattedSnacks = f"0: {snacks[0]}"
+    for snackIndex in range(1, len(snacks)):
+        formattedSnacks = formattedSnacks + f", {snackIndex}: {snacks[snackIndex]}"
+
     # python version of a post-test loop
     while True:
-        # exit if anything but enter is pressed
-        if input("Press enter to go to next student or type any letter to exit:") != "":
-            break
+        # entering a name is unnecessary in most cases but is important for checking food allergies
+        name = input("Enter your name or exit if there are no more students: ")
 
-        print(f"Welcome, student\nid: {len(surveyResults)}\nYou will now pick some snacks\nEach snack is assigned to a number. Refer to it by this number")
+        if name.lower() == "exit": break
+
+        print(f"Welcome, {name}\nYou will now pick some snacks\nEach snack is assigned to a number. Refer to it by this number")
         currentResults = []
-
-        formattedSnacks = ""
-        for snackIndex in range(len(snacks)):
-            if formattedSnacks == "":
-                formattedSnacks = formattedSnacks + f"{snackIndex}: {snacks[snackIndex]}"
-            else:
-                formattedSnacks = formattedSnacks + f", {snackIndex}: {snacks[snackIndex]}"
         
         print(formattedSnacks)
 
         for pref in preferences:
             while True:
-                response = int(input(f"Pick your '{pref}' snack: "))
+                response = int(input(f"Pick {pref} snack: "))
                 if 0 <= response < len(snacks):
                     currentResults.append(snacks[response])
                     break
         
-        surveyResults.append({"id": len(surveyResults), "picks": currentResults})
+        surveyResults.append({"name": name, "picks": currentResults})
     return(surveyResults)
                 
