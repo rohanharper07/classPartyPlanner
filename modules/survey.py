@@ -1,8 +1,8 @@
 # this  surveys each student
 from . import easyInput
 
-def classSurvey(snacks):
-    preferences = ["the best", "a good", "an ok", "a bad", "the worst"]
+def classSurvey(snacks, allergens):
+    preferences = ["the best", "a good", "a good", "a bad", "the worst"]
     surveyResults = []
 
     # formats the string to be easily readable with it's indexes.
@@ -29,7 +29,10 @@ def classSurvey(snacks):
                 if 0 <= response < len(snacks):
                     currentResults.append(snacks[response])
                     break
+
+        allergies = easyInput.multiInput("Do you have any allergies?", allergens, ",")
         
-        surveyResults.append({"name": name, "picks": currentResults})
+        surveyResults.append({"name": name, "picks": currentResults, "allergens": allergies})
+
     return(surveyResults)
                 

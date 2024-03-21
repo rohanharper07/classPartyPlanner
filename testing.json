@@ -1,0 +1,24 @@
+[
+    {
+        "name": "r",
+        "picks": [
+            "Vegemite Scrolls",
+            "Lamingtons",
+            "Fairy Bread",
+            "Meat Pies",
+            "Sausage Rolls"
+        ],
+        "allergens": []
+    },
+    {
+        "name": "d",
+        "picks": [
+            "Lamingtons",
+            "Fairy Bread",
+            "Meat Pies",
+            "Sausage Rolls",
+            "Cheese and Bacon Rolls"
+        ],
+        "allergens": []
+    }
+]
