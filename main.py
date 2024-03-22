@@ -50,6 +50,6 @@ while True:
         plannerData = fileReadWrite.readFile(selection)
 
     # quit the program
-    elif command == "quit":
+    elif command == "Quit":
         print("See ya later!")
         quit()
