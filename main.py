@@ -28,7 +28,7 @@ while True:
     elif command == "Suggest Snacks!" and plannerData != []:
         print("Analysing data...")
         results = analysis.analyse(
-            plannerData, snacks, fileReadWrite.readFile("allergyFoods.json")
+            plannerData, fileReadWrite.readFile("allergyFoods.json")
         )
 
     # save or overwrite a backup
