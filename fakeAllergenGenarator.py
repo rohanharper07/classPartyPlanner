@@ -1,6 +1,7 @@
 # genarates fake allergens for some foods
 
-import random, json
+import json
+import random
 
 allergens = ["nuts", "dairy", "gluten", "egg"]
 
@@ -11,7 +12,11 @@ foodAllergen = {}
 
 for food in foods:
     if random.random() < 0.25:
-        foodAllergen[food] = random.choice(allergens)
+        a = random.choice(allergens)
+        if foodAllergen.get(a, None) is None:
+            foodAllergen[a] = [food]
+        else:
+            foodAllergen[a].append(food)
 
-with open("allergens.json", "w") as file:
+with open("allergyFoods.json", "w") as file:
     json.dump(foodAllergen, file)

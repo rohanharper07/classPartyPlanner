@@ -1,6 +1,7 @@
 # this  surveys each student
 from . import easyInput
 
+
 def classSurvey(snacks, allergens):
     preferences = ["the best", "a good", "a good", "a bad", "the worst"]
     surveyResults = []
@@ -14,13 +15,16 @@ def classSurvey(snacks, allergens):
     # python version of a post-test loop
     while True:
         # entering a name is unnecessary in most cases but is important for checking food allergies
-        name = input("Enter your name or exit if there are no more students: ")
+        name = input("Enter your first name or exit if there are no more students: ")
 
-        if name.lower() == "exit": break
+        if name.lower() == "exit":
+            break
 
-        print(f"Welcome, {name}\nYou will now pick some snacks\nEach snack is assigned to a number. Refer to it by this number")
+        print(
+            f"Welcome, {name}\nYou will now pick some snacks\nEach snack is assigned to a number. Refer to it by this number"
+        )
         currentResults = []
-        
+
         print(formattedSnacks)
 
         for pref in preferences:
@@ -31,8 +35,9 @@ def classSurvey(snacks, allergens):
                     break
 
         allergies = easyInput.multiInput("Do you have any allergies?", allergens, ",")
-        
-        surveyResults.append({"name": name, "picks": currentResults, "allergens": allergies})
 
-    return(surveyResults)
-                
+        surveyResults.append(
+            {"name": name, "picks": currentResults, "allergens": allergies}
+        )
+
+    return surveyResults

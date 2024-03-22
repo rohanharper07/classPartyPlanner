@@ -7,7 +7,7 @@
 #         rawData = file.read()
 
 #     data = rawData.split("\n")
-    
+
 #     return data
 
 # def writeBackup(backup, path):
@@ -20,15 +20,17 @@
 #             else:
 #                 chunk = chunk + f",{item}:{student[item]}"
 #         encoded = encoded + "\n" + chunk
-    
+
 #     with open(path, "w") as destinationFile:
 #         destinationFile.write(encoded)
 
 import json
 
+
 def writeFile(data, path):
     with open(path, "w") as file:
         json.dump(data, file)
+
 
 def readFile(path):
     with open(path, "r") as file:
