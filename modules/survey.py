@@ -29,10 +29,13 @@ def classSurvey(snacks, allergens):
 
         for pref in preferences:
             while True:
-                response = int(input(f"Pick {pref} snack: "))
-                if 0 <= response < len(snacks):
-                    currentResults.append(snacks[response])
-                    break
+                try:
+                    response = int(input(f"Pick {pref} snack: "))
+                    if 0 <= response < len(snacks):
+                        currentResults.append(snacks[response])
+                        break
+                except ValueError:
+                    print("Invalid, enter another value.")
 
         allergies = easyInput.multiInput("Do you have any allergies?", allergens, ",")
 

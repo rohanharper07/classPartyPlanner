@@ -20,8 +20,6 @@ while True:
     if command == "New Planner":
         print("Making a new class party planner!")
         plannerData = survey.classSurvey(snacks, allergens)
-        print(plannerData)
-        safeToExit = False
         print("Make sure to save your data!")
 
     # make and save a new list of suggestions
@@ -36,16 +34,13 @@ while True:
         print("Saving a new backup")
         fileName = input("Enter a file name: ")
         fileReadWrite.writeFile(plannerData, fileName + ".json")
-        safeToExit = True
 
     # load an existing backup
     elif command == "Load Backup":
         # find files with the json extension
         backups = fileFinder.findFiles(".json")
 
-        selection = easyInput.listInput(
-            "Which backup would you like to load?", backups
-        )
+        selection = easyInput.listInput("Which backup would you like to load?", backups)
         print("Loading party planner backup")
         plannerData = fileReadWrite.readFile(selection)
 

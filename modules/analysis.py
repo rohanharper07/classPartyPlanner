@@ -55,7 +55,7 @@ def analyse(surveyResults, allergyFoods):
     # print allergies
     if len(unsuitableFoods) > 0:
         print("ALLERGIES FOUND")
-        for food, students in enumerate(unsuitableFoods):
-            print(f'{food} is unsuitable for: {", ".join(students)}')
+        for food in unsuitableFoods:
+            print(f'{food} is unsuitable for: {", ".join(unsuitableFoods[food])}')
 
     return zip(sortedFoods, sortedVotes)
