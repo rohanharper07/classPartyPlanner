@@ -1,1 +1,22 @@
-{"dairy": ["Tim Tams", "Cheese and Bacon Rolls", "Anzac Biscuits"], "egg": ["Sausage Rolls", "Freddo Frogs", "Cadbury Dairy Milk", "Picnic"], "nuts": ["Cheezels", "Jaffas", "Turkish Delight"], "gluten": ["Zappo", "Honeycomb"]}
+{
+    "dairy": [
+        "Tim Tams",
+        "Cheese and Bacon Rolls",
+        "Cadbury Dairy Milk",
+        "Freddo Frogs"
+    ],
+    "egg": [
+        "Pavlova"
+    ],
+    "nuts": [
+        "Jaffas",
+        "Turkish Delight",
+        "Picnic"
+    ],
+    "gluten": [
+        "Zappo",
+        "Cheezels",
+        "Anzac Biscuits",
+        "Sausage Rolls"
+    ]
+}
